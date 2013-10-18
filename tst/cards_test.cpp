@@ -35,6 +35,22 @@ namespace {
         c.appendCard(H(2));
         EXPECT_EQ(true, c.isValidShowOut());
     };
+
+    TEST_F(CardsTest, isInValidPairCards){
+        Cards c;
+        c.appendCard(H(2));
+        c.appendCard(H(3));
+        EXPECT_EQ(false, c.isValidShowOut());
+    }
+
+    TEST_F(CardsTest, isValidTrigle){
+        Cards c;
+        c.appendCard(H(2));
+        c.appendCard(H(2));
+        c.appendCard(H(2));
+        EXPECT_EQ(true, c.isValidShowOut());
+    }
+
 }//namespace
 
 

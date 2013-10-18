@@ -12,5 +12,19 @@ bool Cards::isValidShowOut()
     if (count == 1){
         return true;
     }
+
+    if (count == 2 && isPair()){
+        return true;
+    }
+    
     return false;
+}
+
+bool Cards::isPair()
+{
+    if (m_cards.size() != 2) {
+        return false;
+    }
+
+    return m_cards[0] == m_cards[1];
 }

@@ -30,10 +30,11 @@ typedef char Card;
     class Cards{
     public:
         Cards(){}
-        ~Cards(){}
+        ~Cards(){m_cards.empty();}
         void appendCard(Card card);
         bool isValidShowOut();
     private:
+        bool isPair();
         std::vector<Card> m_cards;
     };
 //}
