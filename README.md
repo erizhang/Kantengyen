@@ -1,5 +1,6 @@
 Kantengyen
 ==========
+[![Build Status](https://travis-ci.org/erizhang/Kantengyen.png?branch=master)](https://www.travis-ci.org/erizhang/Kantengyen)
 
 China populor poker game (干瞪眼)
 
