@@ -9,18 +9,20 @@ typedef char Card;
 #define ACE   14
 #define DEE   15
 
+#define COLOR_SEPARATOR 13
+
 #define BASE '!'
 #define HEART_BASE (BASE + 0)
 #define HEART(n) ((Card)(HEART_BASE + (n)))
-#define DIAMOND_BASE (BASE + 13)
+#define DIAMOND_BASE (BASE + COLOR_SEPARATOR * 1)
 #define DIMAOND(n) ((Card)(DIAMOND_BASE + (n)))
-#define CLUB_BASE (BASE + 26)
+#define CLUB_BASE (BASE + COLOR_SEPARATOR * 2)
 #define CLUB(n) ((Card)(CLUB_BASE + (n)))
-#define SPADE_BASE (BASE + 39)
+#define SPADE_BASE (BASE + COLOR_SEPARATOR * 3)
 #define SPADE(n) ((Card)(SPADE_BASE + (n)))
 
-#define BLACK_JOKER (BASE + 52)
-#define RED_JOKER   (BASE + 53)
+#define BLACK_JOKER (BASE + COLOR_SEPARATOR * 4)
+#define RED_JOKER   (BASE + COLOR_SEPARATOR * 4 + 1)
 
 #define H HEART
 #define D DIAMOND
@@ -37,6 +39,7 @@ typedef char Card;
     private:
         bool isPair();
         bool isTrigle();
+        bool isSameCardNum(Card a, Card b);
         std::vector<Card> m_cards;
     };
 //}
