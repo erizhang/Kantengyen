@@ -51,7 +51,7 @@ namespace {
         EXPECT_EQ(false, c.isValidShowOut());
     }
 
-    TEST_F(CardsTest, isValidTrigle){
+    TEST_F(CardsTest, isValidBomb){
         Cards c;
         c.appendCard(H(2));
         c.appendCard(H(2));
@@ -59,7 +59,7 @@ namespace {
         EXPECT_EQ(true, c.isValidShowOut());
     }
 
-    TEST_F(CardsTest, isValidTrigleInDifferentColor){
+    TEST_F(CardsTest, isValidBombInDifferentColor){
         Cards c;
         c.appendCard(H(2));
         c.appendCard(D(2));
@@ -67,6 +67,15 @@ namespace {
         EXPECT_EQ(true, c.isValidShowOut());
     }
 
+
+    TEST_F(CardsTest, isValidDeepBomb){
+        Cards c;
+        c.appendCard(H(2));
+        c.appendCard(D(2));
+        c.appendCard(C(2));
+        c.appendCard(S(2));
+        EXPECT_EQ(true, c.isValidShowOut());
+    }
 }//namespace
 
 

@@ -38,7 +38,7 @@ typedef char Card;
         bool isValidShowOut();
     private:
         bool isPair();
-        bool isTrigle();
+        bool isBomb();
         bool isSameCardNum(Card a, Card b);
         std::vector<Card> m_cards;
     };

@@ -20,7 +20,7 @@ bool Cards::isValidShowOut()
     }
 
     if (count == 3) {
-        if (isTrigle()){
+        if (isBomb()){
             return true;
         }
     }
@@ -43,7 +43,7 @@ bool Cards::isPair()
 }
 
 
-bool Cards::isTrigle() {
+bool Cards::isBomb() {
     if (m_cards.size() != 3) {
         return false;
     }
