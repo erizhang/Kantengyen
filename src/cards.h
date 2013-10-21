@@ -39,6 +39,7 @@ typedef char Card;
     private:
         bool isPair();
         bool isBomb();
+        bool isDeepBomb();
         bool isSameCardNum(Card a, Card b);
         std::vector<Card> m_cards;
     };

@@ -24,7 +24,12 @@ bool Cards::isValidShowOut()
             return true;
         }
     }
-    
+
+    if (count == 4) {
+        if (isDeepBomb()){
+            return true;
+        }
+    }
     return false;
 }
 
@@ -49,4 +54,15 @@ bool Cards::isBomb() {
     }
     return isSameCardNum(m_cards[0], m_cards[1]) 
         && isSameCardNum(m_cards[0], m_cards[2]);
+}
+
+
+bool Cards::isDeepBomb() {
+    if (m_cards.size() !=4) {
+        return false;
+    }
+
+    return isSameCardNum(m_cards[0], m_cards[1])
+        && isSameCardNum(m_cards[0], m_cards[2])
+        && isSameCardNum(m_cards[0], m_cards[3]);
 }
