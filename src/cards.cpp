@@ -30,7 +30,7 @@ bool Cards::isValidShowOut()
 
 bool Cards::isSameCardNum(Card a, Card b) 
 {
-    return abs(a - b) % 13 == 0;
+    return abs(a - b) % COLOR_SEPARATOR == 0;
 }
 
 bool Cards::isPair()
