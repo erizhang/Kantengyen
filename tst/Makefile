@@ -29,7 +29,7 @@ CXXFLAGS += -g -Wall -Wextra -pthread
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = Kandengyen_ut
+TESTS = Kantengyen_ut
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -77,5 +77,5 @@ cards.o : $(USER_DIR)/src/cards.cpp $(USER_DIR)/src/*.h $(GTEST_HEADERS)
 cards_test.o : $(USER_DIR)/tst/cards_test.cpp $(USER_DIR)/src/*.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -I$(USER_DIR)/include -I$(USER_DIR)/src -c $(USER_DIR)/tst/cards_test.cpp
 
-Kandengyen_ut : cards_test.o cards.o gtest_main.a
+$(TESTS) : cards_test.o cards.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
