@@ -9,17 +9,18 @@ typedef char Card;
 #define ACE   14
 #define DEE   15
 
-#define HEART_BASE '!'
+#define BASE '!'
+#define HEART_BASE (BASE + 0)
 #define HEART(n) ((Card)(HEART_BASE + (n)))
-#define DIAMOND_BASE '0'
+#define DIAMOND_BASE (BASE + 13)
 #define DIMAOND(n) ((Card)(DIAMOND_BASE + (n)))
-#define CLUB_BASE '@'
+#define CLUB_BASE (BASE + 26)
 #define CLUB(n) ((Card)(CLUB_BASE + (n)))
-#define SPADE_BASE '^'
+#define SPADE_BASE (BASE + 39)
 #define SPADE(n) ((Card)(SPADE_BASE + (n)))
 
-#define BLACK_JOKER '}'
-#define RED_JOKER   '~'
+#define BLACK_JOKER (BASE + 52)
+#define RED_JOKER   (BASE + 53)
 
 #define H HEART
 #define D DIAMOND
@@ -35,6 +36,7 @@ typedef char Card;
         bool isValidShowOut();
     private:
         bool isPair();
+        bool isTrigle();
         std::vector<Card> m_cards;
     };
 //}

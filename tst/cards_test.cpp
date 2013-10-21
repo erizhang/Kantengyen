@@ -36,6 +36,14 @@ namespace {
         EXPECT_EQ(true, c.isValidShowOut());
     };
 
+    TEST_F(CardsTest, isValidPairCardsInDifferentColor){
+        Cards c;
+        c.appendCard(H(2));
+        c.appendCard(S(2));
+        EXPECT_EQ(true, c.isValidShowOut());
+    };
+
+
     TEST_F(CardsTest, isInValidPairCards){
         Cards c;
         c.appendCard(H(2));

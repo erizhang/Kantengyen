@@ -16,6 +16,12 @@ bool Cards::isValidShowOut()
     if (count == 2 && isPair()){
         return true;
     }
+
+    if (count == 3) {
+        if (isTrigle()){
+            return true;
+        }
+    }
     
     return false;
 }
@@ -27,4 +33,12 @@ bool Cards::isPair()
     }
 
     return m_cards[0] == m_cards[1];
+}
+
+
+bool Cards::isTrigle() {
+    if (m_cards.size() != 3) {
+        return false;
+    }
+    return m_cards[0] == m_cards[1] && m_cards[0] == m_cards[2];
 }
