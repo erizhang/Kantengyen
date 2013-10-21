@@ -15,7 +15,7 @@ typedef char Card;
 #define HEART_BASE (BASE + 0)
 #define HEART(n) ((Card)(HEART_BASE + (n)))
 #define DIAMOND_BASE (BASE + COLOR_SEPARATOR * 1)
-#define DIMAOND(n) ((Card)(DIAMOND_BASE + (n)))
+#define DIAMOND(n) ((Card)(DIAMOND_BASE + (n)))
 #define CLUB_BASE (BASE + COLOR_SEPARATOR * 2)
 #define CLUB(n) ((Card)(CLUB_BASE + (n)))
 #define SPADE_BASE (BASE + COLOR_SEPARATOR * 3)

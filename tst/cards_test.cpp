@@ -59,6 +59,14 @@ namespace {
         EXPECT_EQ(true, c.isValidShowOut());
     }
 
+    TEST_F(CardsTest, isValidTrigleInDifferentColor){
+        Cards c;
+        c.appendCard(H(2));
+        c.appendCard(D(2));
+        c.appendCard(S(2));
+        EXPECT_EQ(true, c.isValidShowOut());
+    }
+
 }//namespace
 
 
