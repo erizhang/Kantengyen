@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#e6dcc8" />
+    <title>生命游戏</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <div class="title-block">
+          <p class="eyebrow">Conway · 1970</p>
+          <h1>生命游戏</h1>
+          <p class="lede">在网格上涂细胞，看它们按邻居数量诞生、存活或死去。</p>
+        </div>
+        <dl class="stats">
+          <div>
+            <dt>世代</dt>
+            <dd id="generation">0</dd>
+          </div>
+          <div>
+            <dt>存活</dt>
+            <dd id="population">0</dd>
+          </div>
+        </dl>
+      </header>
+
+      <div class="workspace">
+        <section class="stage" aria-label="细胞网格">
+          <canvas id="board" aria-label="生命游戏棋盘，点击或拖拽可绘制细胞"></canvas>
+        </section>
+
+        <aside class="panel">
+          <div class="btn-row">
+            <button id="run" class="btn primary" type="button" aria-pressed="true">暂停</button>
+            <button id="step" class="btn" type="button">单步</button>
+          </div>
+          <div class="btn-row">
+            <button id="clear" class="btn" type="button">清空</button>
+            <button id="random" class="btn" type="button">随机</button>
+          </div>
+
+          <label class="field">
+            <span>速度 <strong id="speed-value">12</strong> 代/秒</span>
+            <input id="speed" type="range" min="1" max="30" value="12" />
+          </label>
+
+          <label class="field">
+            <span>随机密度 <strong id="density-value">18%</strong></span>
+            <input id="density" type="range" min="5" max="60" step="1" value="18" />
+          </label>
+
+          <label class="field">
+            <span>图案</span>
+            <select id="pattern"></select>
+          </label>
+
+          <label class="field">
+            <span>网格</span>
+            <select id="size">
+              <option value="60x40">60 × 40</option>
+              <option value="100x64" selected>100 × 64</option>
+              <option value="140x90">140 × 90</option>
+            </select>
+          </label>
+
+          <label class="check">
+            <input id="wrap" type="checkbox" checked />
+            <span>边界循环。走出一边的细胞从对面回来。</span>
+          </label>
+
+          <section class="rules">
+            <h2>规则</h2>
+            <ol>
+              <li>活细胞有 2 或 3 个邻居时继续存活。</li>
+              <li>邻居更少会孤独而死，更多会拥挤而死。</li>
+              <li>空位恰好有 3 个邻居时诞生新细胞。</li>
+            </ol>
+          </section>
+        </aside>
+      </div>
+
+      <p class="hint">点击或拖拽绘制。空格运行或暂停，→ 单步，C 清空，R 随机。</p>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
