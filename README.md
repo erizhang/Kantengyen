@@ -4,6 +4,8 @@ Kantengyen
 
 China populor poker game (干瞪眼)
 
+浏览器里的康威生命游戏在 [`game-of-life/`](game-of-life/)。
+
 ## Rule of Game
 
 ## Game introduction (in Chinese)
